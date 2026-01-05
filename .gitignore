@@ -1,1 +1,15 @@
+# Cache & Weights
 ct_memmap_cache/
+*.pt
+*.pth
+*.npy
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+.venv/
+
+# OS Files
+.DS_Store
+Thumbs.db
