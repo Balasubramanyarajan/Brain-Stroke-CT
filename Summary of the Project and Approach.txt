@@ -1,0 +1,51 @@
+Summary of the Project and Approach
+
+Dataset Preparation:
+
+Loaded a multi-class brain CT image dataset with three classes: Normal, Bleeding, and Ischemia.
+
+Scanned and validated image files from disk, ensuring the dataset was balanced and labeled correctly.
+
+Preprocessed images by resizing them to a uniform size (224x224) and stored them efficiently using memmap caching for faster loading.
+
+Data Splitting:
+
+Performed a stratified train-validation split to maintain class distribution in both sets, which helps ensure balanced training and evaluation.
+
+Data Augmentation:
+
+Applied on-the-fly data augmentations such as horizontal flips, rotations, color jitter, and affine transforms to improve model generalization.
+
+Model Selection and Setup:
+
+Chose ResNet18, a lightweight and effective convolutional neural network pre-trained on ImageNet.
+
+Replaced the final fully connected layer to output predictions for the 3 classes.
+
+Utilized transfer learning by starting from pre-trained weights, speeding up convergence.
+
+Training:
+
+Trained the model on GPU (GTX 1650 Ti with 4GB VRAM), carefully tuning batch size and learning rate to fit memory constraints.
+
+Used AdamW optimizer and a cosine annealing learning rate scheduler for efficient optimization.
+
+Trained over multiple epochs (e.g., 10) with progress monitored using validation accuracy.
+
+Evaluation:
+
+Saved the best performing model checkpoint based on validation accuracy.
+
+Evaluated the model using classification reports and confusion matrices to understand per-class performance.
+
+Achieved high accuracy (~96%) and balanced precision/recall across all classes.
+
+Key Factors for Success:
+
+Proper data handling and stratified splitting maintained balanced training and evaluation.
+
+Data augmentation improved generalization to unseen data.
+
+Using a pretrained ResNet18 helped leverage learned features, reducing training time.
+
+Careful hyperparameter tuning and monitoring enabled effective learning despite hardware limits.
