@@ -28,8 +28,8 @@ The system is designed for high-performance medical imaging, utilizing **Memory 
 ## 🛠️ Installation & Setup
 
 1. **Clone the Repository:**
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-   cd your-repo-name
+   git clone https://github.com/Balasubramanyarajan/Brain-Stroke-CT
+   cd Brain-Stroke-CT
 2. **Install Dependencies:**
    pip install -r requirements.txt
 3. Dataset Configuration: Place your dataset in the directory specified in the code. The script expects folders named Normal, Bleeding, and Ischemia.
